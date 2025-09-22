@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Bliss</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hotel Bliss</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#booking">Book Room</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Hotel Bliss</h2>
+    <p>Luxury and comfort at your fingertips.</p>
+  </section>
+
+  <section id="booking">
+    <h2>Room Booking</h2>
+    <form id="bookingForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="roomType">Room Type:</label>
+      <select id="roomType">
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+        <option value="Suite">Suite</option>
+      </select>
+
+      <label for="checkIn">Check-In Date:</label>
+      <input type="date" id="checkIn" required />
+
+      <label for="checkOut">Check-Out Date:</label>
+      <input type="date" id="checkOut" required />
+
+      <button type="submit">Book Now</button>
+    </form>
+    <div id="confirmation"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@hotelbliss.com</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hotel Bliss. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
