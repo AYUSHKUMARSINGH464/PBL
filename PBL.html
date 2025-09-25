@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL URBANNEST - Luxury & Comfort</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #D4AF37; /* Gold accent */
+            transition: width 0.3s;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=Luxury+Hotel+Lobby') no-repeat center center/cover;
+        }
+        .form-input {
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+        }
+        .btn-primary {
+            background-color: #D4AF37;
+            color: #fff;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #c09b2e;
+            transform: translateY(-2px);
+        }
+        /* Page transition effect */
+        .page {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-playfair text-2xl font-bold text-gray-800 tracking-wider">
+                <i class="fa-solid fa-gem text-yellow-500"></i> HOTEL URBANNEST
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-gray-600 hover:text-gray-900 font-medium active">Home</a>
+                <a href="#rooms" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Our Rooms</a>
+                <a href="#booking" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Booking</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium">Contact</a>
+            </div>
+            <a href="#booking" class="hidden md:inline-block btn-primary rounded-lg px-6 py-2 font-semibold shadow-lg">Book Now</a>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 text-gray-600 mobile-nav-link">Home</a>
+            <a href="#rooms" class="block py-2 text-gray-600 mobile-nav-link">Our Rooms</a>
+            <a href="#booking" class="block py-2 text-gray-600 mobile-nav-link">Booking</a>
+            <a href="#contact" class="block py-2 text-gray-600 mobile-nav-link">Contact</a>
+            <a href="#booking" class="mt-2 w-full block text-center btn-primary rounded-lg px-6 py-2 font-semibold shadow-lg">Book Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Section -->
+        <section id="home" class="page active">
+            <div class="hero-section h-[calc(100vh-76px)] flex items-center justify-center text-white">
+                <div class="text-center p-4">
+                    <h1 class="font-playfair text-5xl md:text-7xl font-bold mb-4">Experience Unmatched Luxury</h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Welcome to HOTEL URBANNEST, where every stay is a unique and unforgettable experience.</p>
+                    <a href="#rooms" class="btn-primary rounded-lg px-8 py-4 text-lg font-bold shadow-xl">Explore Our Rooms</a>
+                </div>
+            </div>
+             <!-- About Us Snippet -->
+            <div class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://placehold.co/600x400/e2e8f0/333333?text=Hotel+Exterior" alt="Hotel Exterior" class="rounded-lg shadow-2xl">
+                    </div>
+                    <div>
+                        <h2 class="font-playfair text-4xl font-bold mb-4 text-gray-800">Discover a Place Where Dreams Come True</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Nestled in the heart of the city, HOTEL URBANNEST offers breathtaking views and world-class amenities. Our commitment to excellence ensures that your time with us is nothing short of perfect, whether you're here for business or leisure.</p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">From our elegantly appointed rooms to our fine dining restaurants and serene spa, every detail is crafted for your comfort and pleasure.</p>
+                        <a href="#booking" class="btn-primary rounded-lg px-6 py-3 font-semibold shadow-lg">Reserve Your Stay</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms Page Section -->
+        <section id="rooms" class="page py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-playfair text-4xl font-bold text-gray-800">Our Exquisite Rooms & Suites</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Choose from our selection of rooms, each designed to provide the ultimate in comfort and style.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Room Card 1 -->
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/F4EAD5/333333?text=Deluxe+Room" alt="Deluxe Room" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold font-playfair mb-2">Deluxe Room</h3>
+                            <p class="text-gray-600 mb-4">A perfect blend of comfort and elegance, featuring a king-sized bed and a stunning city view.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-yellow-600"> 999 / night</span>
+                                <a href="#booking" class="btn-primary rounded-lg px-5 py-2 font-semibold">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Room Card 2 -->
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/D5E4F4/333333?text=Executive+Suite" alt="Executive Suite" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold font-playfair mb-2">Executive Suite</h3>
+                            <p class="text-gray-600 mb-4">Spacious and luxurious, our suite includes a separate living area and premium amenities.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-yellow-600">2,999 / night</span>
+                                <a href="#booking" class="btn-primary rounded-lg px-5 py-2 font-semibold">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Room Card 3 -->
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/EAD5F4/333333?text=Presidential+Suite" alt="Presidential Suite" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold font-playfair mb-2">Presidential Suite</h3>
+                            <p class="text-gray-600 mb-4">The pinnacle of luxury, offering unparalleled views, a private jacuzzi, and butler service.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-yellow-600">5,999 / night</span>
+                                <a href="#booking" class="btn-primary rounded-lg px-5 py-2 font-semibold">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Page Section -->
+        <section id="booking" class="page py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-playfair text-4xl font-bold text-gray-800">Make a Reservation</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We're excited to welcome you. Fill out the form below to secure your stay.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-2xl">
+                    <form id="booking-form" novalidate>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6"> 
+                           <div>
+                                <label for="checkin" class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
+                                <input type="date" id="checkin" name="checkin" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                           </div>
+                           <div>
+                                <label for="checkout" class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
+                                <input type="date" id="checkout" name="checkout" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                           </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="room-type" class="block text-sm font-medium text-gray-700 mb-1">Room Type</label>
+                                <select id="room-type" name="room-type" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                                    <option>Deluxe Room</option>
+                                    <option>Executive Suite</option>
+                                    <option>Presidential Suite</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
+                                <input type="number" id="guests" name="guests" min="1" max="4" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary rounded-lg px-10 py-3 font-bold text-lg shadow-lg w-full sm:w-auto">Confirm Booking</button>
+                        </div>
+                    </form>
+                    <div id="booking-message" class="mt-6 text-center text-lg font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page Section -->
+        <section id="contact" class="page py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="font-playfair text-4xl font-bold text-gray-800">Get In Touch</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Have questions? We'd love to hear from you. Reach out to us anytime.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 bg-white p-8 rounded-lg shadow-2xl">
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-2xl font-bold font-playfair mb-6">Contact Information</h3>
+                        <div class="space-y-4 text-gray-700">
+                           <p class="flex items-start">
+                                <i class="fa-solid fa-map-marker-alt text-yellow-500 mt-1 mr-4"></i>
+                                <span>123 Luxury Lane, Metropolis City, 12345</span>
+                           </p>
+                           <p class="flex items-start">
+                                <i class="fa-solid fa-phone text-yellow-500 mt-1 mr-4"></i>
+                                <span>(123) 456-7890</span>
+                           </p>
+                           <p class="flex items-start">
+                                <i class="fa-solid fa-envelope text-yellow-500 mt-1 mr-4"></i>
+                                <span>contact@geminihotel.com</span>
+                           </p>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-500 hover:text-yellow-600 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-yellow-600 text-2xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-gray-500 hover:text-yellow-600 text-2xl"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div>
+                         <h3 class="text-2xl font-bold font-playfair mb-6">Send Us a Message</h3>
+                         <form id="contact-form" novalidate>
+                            <div class="mb-4">
+                                <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" id="contact-name" name="contact-name" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                                <input type="email" id="contact-email" name="contact-email" class="w-full form-input border-gray-300 rounded-lg p-3" required>
+                            </div>
+                             <div class="mb-4">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full form-input border-gray-300 rounded-lg p-3" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary rounded-lg px-8 py-3 font-bold text-lg shadow-lg">Send Message</button>
+                         </form>
+                         <div id="contact-message" class="mt-4 text-center text-lg font-medium"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-playfair text-2xl font-bold mb-2">HOTEL URBANNEST</p>
+            <p>&copy; 2025 HOTEL URBANNEST. All Rights Reserved. Crafted with care.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const allLinks = [...navLinks, ...mobileNavLinks];
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Function to switch pages
+        function showPage(pageId) {
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+
+            // Update active link
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            window.scrollTo(0, 0); // Scroll to top on page change
+        }
+
+        // Navigation handling
+        function handleNavClick(event) {
+            // Check if the link is an internal anchor link
+            const href = event.currentTarget.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                event.preventDefault();
+                const pageId = href.substring(1);
+                showPage(pageId);
+                
+                // Close mobile menu on click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        }
+        
+        // Add event listeners to all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', handleNavClick);
+        });
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Check hash on page load
+        const initialHash = window.location.hash;
+        if (initialHash) {
+            const pageId = initialHash.substring(1);
+            const targetPage = document.getElementById(pageId);
+            if (targetPage && targetPage.classList.contains('page')) {
+                 showPage(pageId);
+            }
+        } else {
+            showPage('home');
+        }
+
+
+        // Form Handling: Booking Form
+        const bookingForm = document.getElementById('booking-form');
+        const bookingMessage = document.getElementById('booking-message');
+        
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (bookingForm.checkValidity()) {
+                const name = document.getElementById('name').value;
+                bookingMessage.textContent = `Thank you, ${name}! Your booking request has been received. We will contact you shortly to confirm.`;
+                bookingMessage.className = 'mt-6 text-center text-lg font-medium text-green-600';
+                bookingForm.reset();
+            } else {
+                bookingMessage.textContent = 'Please fill out all required fields correctly.';
+                bookingMessage.className = 'mt-6 text-center text-lg font-medium text-red-600';
+            }
+        });
+
+        // Form Handling: Contact Form
+        const contactForm = document.getElementById('contact-form');
+        const contactMessage = document.getElementById('contact-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (contactForm.checkValidity()) {
+                const name = document.getElementById('contact-name').value;
+                contactMessage.textContent = `Thank you for your message, ${name}! We will get back to you soon.`;
+                contactMessage.className = 'mt-4 text-center text-lg font-medium text-green-600';
+                contactForm.reset();
+            } else {
+                contactMessage.textContent = 'Please fill out all fields before sending.';
+                contactMessage.className = 'mt-4 text-center text-lg font-medium text-red-600';
+            }
+        });
+
+        // Set min date for checkin/checkout to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        document.getElementById('checkout').setAttribute('min', today);
+    });
+    </script>
+</body>
+</html>
